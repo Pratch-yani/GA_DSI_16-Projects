@@ -1,178 +1,130 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 1: Standardized Testing, Statistical Summaries and Inference
+# Project 1: SAT & ACT Analysis
 
-### Overview
+## Problem Statement
+Since 2012, SAT lost leadership to ACT as the most widely used college admission test in the US.  College Board released the new format in March 2016, and would like to identify priority state(s) to focus the efforts and resources in driving SAT participation rates going forward.  
 
-Our first module in DSI covers:
-- basic statistics (distributions, confidence intervals, hypothesis testing)
-- many Python programming concepts
-- programmatically interacting with files and directories
-- visualizations
-- EDA
-- working with Jupyter notebooks for development and reporting
 
-You might wonder if you're ready to start doing data science. While you still have **tons** to learn, there are many aspects of the data science process that you're ready to tackle. Project 1 aims to allow you to practice and demonstrate these skills.
+## Executive Summary
 
-For our first project, we're going to take a look at aggregate SAT and ACT scores and participation rates from each state in the United States. We'll seek to identify trends in the data and combine our data analysis with outside research to identify likely factors influencing participation rates and scores in various states.
+To address our problem statement, we analyse average SAT and ACT scores by state, as well as the participation rates, for the graduating class of 2017 and 2018.  Topics covered are outlined below:  
 
-Generally speaking, you will be asked to come up with a data science problem. Here's a specific prompt that should help you craft this statement:
-> The new format for the SAT was released in March 2016. As an employee of the College Board - the organization that administers the SAT - you are a part of a team that tracks statewide participation and recommends where money is best spent to improve SAT participation rates. Your presentation and report should be geared toward **non-technical** executives with the College Board and you will use the provided data and outside research to make recommendations about how the College Board might work to increase the participation rate in a **state of your choice**.
+  ### Key Contents
+  - [2017 Data Import & Cleaning](#Data-Import-and-Cleaning)
+  - [2018 Data Import and Cleaning](#2018-Data-Import-and-Cleaning)
+  - [Exploratory Data Analysis](#Exploratory-Data-Analysis)
+  - [Data Visualization](#Visualize-the-data)
+  - [Descriptive and Inferential Statistics](#Descriptive-and-Inferential-Statistics)
+  - [Outside Research](#Outside-Research)
+  - [Conclusions and Recommendations](#Conclusions-and-Recommendations)
 
----
 
-### Datasets
+## Data Dictionary:
 
-#### Provided Data
+|Feature|Type|Dataset|Description|
+|---|---|---|---|
+|**state**|*string*|sat_2017, act_2017, sat_2018, act_2018|US States (50 States + District of Columbia).| 
+|**sat17_participation**|*float*|sat_2017|The percent participation on SAT test for students in the class of 2017.|
+|**sat17_erw**|*integer*|sat_2017|The average Evidence-Based Reading and Writing (ERW) scores of the SAT in 2017.|
+|**sat17_math**|*integer*|sat_2017|The average Math scores of the SAT in 2017.|
+|**sat17_total**|*integer*|sat_2017|The average Total scores of the SAT in 2017.|
+|**act17_participation**|*float*|act_2017|The percent participation on ACT test for students in the class of 2017.|
+|**act17_english**|*float*|act_2017|The average Engligh scores of the ACT in 2017.|
+|**act17_math**|*float*|act_2017|The average Math scores of the ACT in 2017.|
+|**act17_reading**|*float*|act_2017|The average Reading scores of the ACT in 2017.|
+|**act17_science**|*float*|act_2017|The average Science scores of the ACT in 2017.|
+|**act17_composite**|*float*|act_2017|The average Composite scores of the ACT in 2017.|
+|**sat18_participation**|*float*|sat_2018|The percent participation on SAT test for students in the class of 2018.|
+|**sat18_erw**|*integer*|sat_2018|The average Evidence-Based Reading and Writing (ERW) scores of the SAT in 2018.|
+|**sat18_math**|*integer*|sat_2018|The average Math scores of the SAT in 2018.|
+|**sat18_total**|*integer*|sat_2018|The average Total scores of the SAT in 2018.|
+|**act18_participation**|*float*|act_2018|The percent participation on ACT test for students in the class of 2018.|
+|**act18_english**|*float*|act_2018|The average Engligh scores of the ACT in 2018.|
+|**act18_math**|*float*|act_2018|The average Math scores of the ACT in 2018.|
+|**act18_reading**|*float*|act_2018|The average Reading scores of the ACT in 2018.|
+|**act18_science**|*float*|act_2018|The average Science scores of the ACT in 2018.|
+|**act18_composite**|*float*|act_2018|The average Composite scores of the ACT in 2018.|
 
-For this project, you'll have two provided datasets:
 
-- [2017 SAT Scores](./data/sat_2017.csv)
-- [2017 ACT Scores](./data/act_2017.csv)
+### Key Findings from outside research
 
-These data give average SAT and ACT scores by state, as well as participation rates, for the graduating class of 2017.
+**SAT reclaims leadership in college admission test in 2018 (after losing to ACT in 2012).  State contracts proven effective to increase participation rates as seen in Colorado and Illinois.**  
 
-You can see the source for the SAT data [here](https://blog.collegevine.com/here-are-the-average-sat-scores-by-state/), and the source for the ACT data [here](https://blog.prepscholar.com/act-scores-by-state-averages-highs-and-lows). **Make sure you cross-reference your data with your data sources to eliminate any data collection or data entry issues.**
+- SAT increased participation rates by revising the test and entering into deals with numerous states and school systems to give students the exam. **New contracts with Colorado and Illinois were instrumental in the SAT’s growth.**  This is in line with our data investigations.  
 
-#### Additional Data
+- Within the past decade, the testing landscape has evolved rapidly as many states have opted to pay the ACT or College Board **(SAT School Day Program)** to deliver exams during school hours. Students can take those versions free of charge, where available, or they can pay to take the tests on the weekends.
 
-2018 state-by-state average results and participation for the SAT are available in PDF reports [here](https://reports.collegeboard.org/sat-suite-program-results/state-results). 2018 ACT state-by-state mean composite scores and participation rates are [here](http://www.act.org/content/dam/act/unsecured/documents/cccr2018/Average-Scores-by-State.pdf) .
+- For Colorado, SAT replaced ACT as a result of new legislation (House Bill 15-1323) requiring the Department of Education to take competitive bids for both a college-entrance exam and a new exam for 10th-graders.  College Board won the bid against ACT, and awarded a 5-year contract.  Previously, ACT has been given in Colorado since 2001.  Source: https://www.denverpost.com/2017/03/06/colorado-juniors-sat-college-exam/#:~:text=The%20SAT%20is%20replacing%20the,new%20exam%20for%2010th%2Dgraders. https://co.chalkbeat.org/2015/12/23/21092477/goodbye-act-hello-sat-a-significant-change-for-colorado-high-schoolers https://www.cde.state.co.us/communications/11thand10thgradeexams
 
-**This data has been compiled into CSV files which are also included in the *data* directory of this repo**
+- In Illinois, SAT also replaced ACT as its state contract ended in 2016, despite having been popular for the past 15 years.
+coto allow competitive bidding, where College Board SAT won over ACT which had been admistered in Colorado since 2001. 
+https://www.chicagotribune.com/news/ct-illinois-chooses-sat-met-20160211-story.html
 
----
+- The trend of state contracts will continue.  Currently ACT has 17 state contracts, SAT has 8, with the total of 25 states nationwide, and expecting others to join.  (Source: https://www.applerouth.com/blog/2016/01/13/how-the-sat-got-its-groove-back/)  
 
-### Deliverables
+- Benefits of State Contract: https://collegereadiness.collegeboard.org/sat/k12-educators/sat-school-day/contracts
 
-All of your projects will comprise of a written technical report and a presentation. As we continue in the course, your technical report will grow in complexity, but for this initial project it will comprise:
-- A Jupyter notebook that describes your data with visualizations & statistical analysis.
-- A README markdown file the provides an introduction to and overview of your project.
-- Your presentation slideshow rendered as a .pdf file.
-**NOTE**: Your entire Github repository will be evaluated as your technical report. Make sure that your files and directories are named appropriately, that all necessary files are included, and that no unnecessary or incomplete files are included.
 
-For your first presentation, you'll be presenting to a **non-technical** audience. You should prepare a slideshow with appropriately scaled visuals to complement a compelling narrative. **Presentation duration will differ by market, so check with your local instructor.**
 
----
 
-### Technical Report Starter Code
+## Conclusions:
 
-Future projects will require you to decide on the entire structure of your technical report. Here, we provide you with [starter code](./code/starter-code.ipynb) in a Jupyter notebook that will help to guide your data exploration and analysis. **If you choose to edit the core structure of this notebook, make sure you don't exclude any of the requested operations**.
+**Out of the 3 states of interest, IOWA has the highest potential.**
 
----
+- **Highest population among the 3 states.**  Gaining state participation in Iowa (3.96 Million Population) will have higher impact on the National average particiation.  Second priority is Kansas (2.9 Million), while South Dakota is as smaller opportunity (884 Thousand).
 
-### Style Guide and Suggested Resources
+- **Opportunity to replace the current state assessment tests.**. 
+  - All 3 states are using non SAT/ACT for high school tests, providing an opportunity for SAT.  For students looking to apply for college, switching to SAT will take the burden of their time to prepare for college admissions, while also encouraging those who may not consider apply for college to do so given less barrier on time and resources (as seen in the case of Illinois).
+  - Greater opportunity for Iowa and Kansas as they are currently using local tests (Iowa State-wide Assessment - ISASP) and Kansas Assessment Program - KAP, while South Dakota is currently using Smarter Balanced, a standardized high school test used in many states, i.e. California, Connecticut).
+  - Source: https://www.edweek.org/ew/section/multimedia/states-require-students-take-sat-or-act.html
+  
+- **Additional research show supporting information for Iowa.**
+  - **Relatively stronger financials vs. Kansas:** With higher tax revenue (USD 9.5 vs. 8 Billion), higher (USD 6 vs. 3.9 Billion), and relatively lower debt USD 6.12 Billion in fiscal year 2015 (ranked 37th among the states in debt).  (Source: https://ballotpedia.org/Iowa_state_budget_and_finances)
+  - **Focus on education:** Education accounted for 41.6 percent of state expenditures in fiscal year 2015.
+  - **Need for change with support from legislators:**
+    - Based on the article Money is the key to education in Iowa, there is a sentiment around need for a change for Iowa regarding measures of education success for students, while the main constraint is money.  Iowa is ranked 25th in per-pupil spending (USD 13,531 vs. USD 14,273 National Average).  Fortunately, some advocates and legislators continue to push for higher funding.  Last session, the Iowa Legislature also increased funding by 2.1%.
+    - A few quotes that implies "need for change":
+      - "Iowa has lost its leadership position in national rankings," 
+      - In recent years, some of the stats that have come to define educational success have changed, and not always for the better. Sometimes those numbers haven't changed, but other states have made gains that Iowa students aren't necessarily seeing. 
+      - Source: Article: Money is the key to education in Iowa https://qctimes.com/news/local/education/the-numbers-money-is-the-key-to-education-in-iowa/article_1d1578dc-0050-5814-91f7-ef3a74da739d.html
 
-[Tim Dwyer](https://www.linkedin.com/in/jtimdwyer/) (former DSI student and TA) put together [this style guide](https://git.generalassemb.ly/DSI-US-8/style_guide). Some recommendations are geared toward future projects (which will include modeling and span multiple notebooks), but generally these are great recommendations.
+  
 
-Here's a link on [how to give a good lightning talk](https://www.semrush.com/blog/16-ways-to-prepare-for-a-lightning-talk/), which provides some good recommendations for short presentations.
+**Prioritized list of states with high opportunity to target**
 
-[Here's a great summary](https://towardsdatascience.com/storytelling-with-data-a-data-visualization-guide-for-business-professionals-97d50512b407) of the main points of the book _Storytelling with Data_, which I can't recommend enough. [Here's a blog post](http://www.storytellingwithdata.com/blog/2017/8/9/my-guiding-principles) by the author about his guiding principles for visualizations.
 
----
+|Priority|State|2018 SAT Participation|Population|Current High School Test|
+|---|---|---|---|---|
+|1|**Iowa**|3%|3,962,077|Iowa State-wide Assessment(ISASP)|
+|2|**Kansas**|4%|2,913,314|Kansas Assessment Program. (KAP)|
+|3|**South Dakota**|3%|884,659|Smarter Balanced (standardized test)|
 
-### Submission
+Sources: (State Population)
+https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States_by_population
 
-**Materials must be submitted by the beginning of class (9AM) on Aug 11th.**
 
-Your technical report will be hosted on Github Enterprise. Make sure it includes:
+## Recommendations:
 
-- A README.md (that isn't this file)
-- Jupyter notebook(s) with your analysis (renamed to describe your project)
-- Data files
-- Presentation slides
-- Any other necessary files (images, etc.)
+**Adopt same strategy as for Colorado & Illinois with State Contracts (SAT School Day Program), focusing on Iowa, followed by Kansas.**  This may require changes in legislation for the particular state to allow competitive bidding.  
+  
+**Key message to convince legislators & Department of Education:**
+  - Redirecting the funds spent on local high school tests to state-funded SAT will release the state's resources to on other matters, while ensuring that student's measurement of academic success is achieved and competitive with other states nationwide.
+  - For parents and students, this will benefit students who are applying for college by putting less time and burden on preparing for standardized tests, while also benefiting those who previously were not planning to apply for college by increasing their readiness and affordability as the test will be state-funded.
+  
 
-**Check with your local instructor for how they would like you to submit your repo for review.**
 
----
 
-### Presentation Structure
 
-- **Must be within time limit established by local instructor.**
-- Use Google Slides or some other visual aid (Keynote, Powerpoint, etc).
-- Consider the audience. Assume you are presenting to non-technical executives with the College Board (the organization that administers the SATs).
-- Start with the **data science problem**.
-- Use visuals that are appropriately scaled and interpretable.
-- Talk about your procedure/methodology (high level, **CODE IS ALWAYS INAPPROPRIATE FOR A NON-TECHNICAL AUDIENCE**).
-- Talk about your primary findings.
-- Make sure you provide **clear recommendations** that follow logically from your analyses and narrative and answer your data science problem.
 
-Be sure to rehearse and time your presentation before class.
 
----
 
-### Rubric
-Your local instructor will evaluate your project (for the most part) using the following criteria.  You should make sure that you consider and/or follow most if not all of the considerations/recommendations outlined below **while** working through your project.
 
-**Scores will be out of 21 points based on the 7 items in the rubric.** <br>
-*3 points per section*<br>
 
-| Score | Interpretation |
-| --- | --- |
-| **0** | *Project fails to meet the minimum requirements for this item.* |
-| **1** | *Project meets the minimum requirements for this item, but falls significantly short of portfolio-ready expectations.* |
-| **2** | *Project exceeds the minimum requirements for this item, but falls short of portfolio-ready expectations.* |
-| **3** | *Project meets or exceeds portfolio-ready expectations; demonstrates a thorough understanding of every outlined consideration.* |
 
-**Project Organization**
-- Are modules imported correctly (using appropriate aliases)?
-- Are data imported/saved using relative paths?
-- Does the README provide a good executive summary of the project?
-- Is markdown formatting used appropriately to structure notebooks?
-- Are there an appropriate amount of comments to support the code?
-- Are files & directories organized correctly?
-- Are there unnecessary files included?
-- Do files and directories have well-structured, appropriate, consistent names?
 
-**Clarity of Message**
-- Is the problem statement clearly presented?
-- Does a strong narrative run through the project?
-- Does the student provide appropriate context to connect individual steps back to the overall project?
-- Is it clear how the final recommendations were reached?
-- Are the conclusions/recommendations clearly stated?
 
-**Python Syntax and Control Flow**
-- Is care taken to write human readable code?
-- Is the code syntactically correct (no runtime errors)?
-- Does the code generate desired results (logically correct)?
-- Does the code follows general best practices and style guidelines?
-- Are Pandas functions used appropriately?
-- Does the student demonstrate mastery masking in Pandas?
-- Does the student demonstrate mastery sorting in Pandas?
 
-**Data Cleaning and EDA**
-- Does the student fix data entry issues?
-- Are data appropriately labeled?
-- Are data appropriately typed?
-- Are datasets combined correctly?
-- Are appropriate summary statistics provided?
-- Are steps taken during data cleaning and EDA framed appropriately?
 
-**Visualizations**
-- Are the requested visualizations provided?
-- Do plots accurately demonstrate valid relationships?
-- Are plots labeled properly?
-- Plots interpreted appropriately?
-- Are plots formatted and scaled appropriately for inclusion in a notebook-based technical report?
 
-**Research and Conceptual Understanding**
-- Were useful insights gathered from outside sources?
-- Are sources clearly identified?
-- Does the student provide appropriate interpretation with regards to descriptive and inferential statistics?
 
-**Presentation**
-- Is the problem statement clearly presented?
-- Does a strong narrative run through the presentation building toward a final conclusion?
-- Are the conclusions/recommendations clearly stated?
-- Is the level of technicality appropriate for the intended audience?
-- Is the student substantially over or under time?
-- Does the student appropriately pace their presentation?
-- Does the student deliver their message with clarity and volume?
-- Are appropriate visualizations generated for the intended audience?
-- Are visualizations necessary and useful for supporting conclusions/explaining findings?
 
-In order to pass the project, students must earn a minimum score of 1 for each category.
-- Earning below a 1 in one or more of the above categories would result in a failing project.
-- While a minimum of 1 in each category is the required threshold for graduation, students should aim to earn at least an average of 1.5 across each category. An average score below 1.5, while it may be passing, means students may want to solicit specific feedback in order to significantly improve the project before showcasing it as part of a portfolio or the job search.
 
-### REMEMBER:
-
-This is a learning environment and you are encouraged to try new things, even if they don't work out as well as you planned! While this rubric outlines what we look for in a _good_ project, it is up to you to go above and beyond to create a _great_ project. **Learn from your failures and you'll be prepared to succeed in the workforce**.
