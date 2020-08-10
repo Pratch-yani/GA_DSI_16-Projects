@@ -1,5 +1,6 @@
 # Project 1: SAT & ACT Analysis
 
+
 ## Problem Statement
 Since 2012, SAT lost leadership to ACT as the most widely used college admission test in the US.  College Board released the new format in March 2016, and would like to identify priority state(s) to focus the efforts and resources in driving SAT participation rates going forward.  
 
@@ -45,28 +46,16 @@ To address our problem statement, we analyse average SAT and ACT scores by state
 |**act18_composite**|*float*|act_2018|The average Composite scores of the ACT in 2018.|
 
 
-### Key Findings from outside research
-
-**SAT reclaims leadership in college admission test in 2018 (after losing to ACT in 2012).  State contracts proven effective to increase participation rates as seen in Colorado and Illinois.**  
-
-- SAT increased participation rates by revising the test and entering into deals with numerous states and school systems to give students the exam. **New contracts with Colorado and Illinois were instrumental in the SAT’s growth.**  This is in line with our data investigations.  
-
-- Within the past decade, the testing landscape has evolved rapidly as many states have opted to pay the ACT or College Board **(SAT School Day Program)** to deliver exams during school hours. Students can take those versions free of charge, where available, or they can pay to take the tests on the weekends.
-
-- For Colorado, SAT replaced ACT as a result of new legislation (House Bill 15-1323) requiring the Department of Education to take competitive bids for both a college-entrance exam and a new exam for 10th-graders.  College Board won the bid against ACT, and awarded a 5-year contract.  Previously, ACT has been given in Colorado since 2001.  Source: https://www.denverpost.com/2017/03/06/colorado-juniors-sat-college-exam/#:~:text=The%20SAT%20is%20replacing%20the,new%20exam%20for%2010th%2Dgraders. https://co.chalkbeat.org/2015/12/23/21092477/goodbye-act-hello-sat-a-significant-change-for-colorado-high-schoolers https://www.cde.state.co.us/communications/11thand10thgradeexams
-
-- In Illinois, SAT also replaced ACT as its state contract ended in 2016, despite having been popular for the past 15 years.
-coto allow competitive bidding, where College Board SAT won over ACT which had been admistered in Colorado since 2001. 
-https://www.chicagotribune.com/news/ct-illinois-chooses-sat-met-20160211-story.html
-
-- The trend of state contracts will continue.  Currently ACT has 17 state contracts, SAT has 8, with the total of 25 states nationwide, and expecting others to join.  (Source: https://www.applerouth.com/blog/2016/01/13/how-the-sat-got-its-groove-back/)  
-
-- Benefits of State Contract: https://collegereadiness.collegeboard.org/sat/k12-educators/sat-school-day/contracts
-
-
 
 
 ## Conclusions:
+
+From the EDA, Visualizations, and outside research, **there are 3 states of interest** for College Board to increase SAT participations.  These are states that ranked lowest in SAT participation rates, while they are not mandatory states for ACT (100% participation). 
+
+- Iowa
+- Kansas
+- South Dakota
+
 
 **Out of the 3 states of interest, IOWA has the highest potential.**
 
@@ -78,7 +67,7 @@ https://www.chicagotribune.com/news/ct-illinois-chooses-sat-met-20160211-story.h
   - Source: https://www.edweek.org/ew/section/multimedia/states-require-students-take-sat-or-act.html
   
 - **Additional research show supporting information for Iowa.**
-  - **Relatively stronger financials vs. Kansas:** With higher tax revenue (USD 9.5 vs. 8 Billion), higher (USD 6 vs. 3.9 Billion), and relatively lower debt USD 6.12 Billion in fiscal year 2015 (ranked 37th among the states in debt).  (Source: https://ballotpedia.org/Iowa_state_budget_and_finances)
+  - **Relatively stronger financials vs. Kansas:** With higher tax revenue (USD 9.5 vs. 8 Billion), higher federal aid (USD 6 vs. 3.9 Billion), and relatively lower debt USD 6.12 Billion in fiscal year 2015 (ranked 37th among the states in debt).  (Source: https://ballotpedia.org/Iowa_state_budget_and_finances)
   - **Focus on education:** Education accounted for 41.6 percent of state expenditures in fiscal year 2015.
   - **Need for change with support from legislators:**
     - Based on the article Money is the key to education in Iowa, there is a sentiment around need for a change for Iowa regarding measures of education success for students, while the main constraint is money.  Iowa is ranked 25th in per-pupil spending (USD 13,531 vs. USD 14,273 National Average).  Fortunately, some advocates and legislators continue to push for higher funding.  Last session, the Iowa Legislature also increased funding by 2.1%.
