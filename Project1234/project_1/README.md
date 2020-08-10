@@ -10,13 +10,13 @@ Since 2012, SAT lost leadership to ACT as the most widely used college admission
 To address our problem statement, we analyse average SAT and ACT scores by state, as well as the participation rates, for the graduating class of 2017 and 2018.  Topics covered are outlined below:  
 
   ### Key Contents
-  - [2017 Data Import & Cleaning](#Data-Import-and-Cleaning)
-  - [2018 Data Import and Cleaning](#2018-Data-Import-and-Cleaning)
-  - [Exploratory Data Analysis](#Exploratory-Data-Analysis)
-  - [Data Visualization](#Visualize-the-data)
-  - [Descriptive and Inferential Statistics](#Descriptive-and-Inferential-Statistics)
-  - [Outside Research](#Outside-Research)
-  - [Conclusions and Recommendations](#Conclusions-and-Recommendations)
+  - 2017 Data Import & Cleaning
+  - 2018 Data Import and Cleaning
+  - Exploratory Data Analysis
+  - Data Visualization
+  - Descriptive and Inferential Statistics
+  - Outside Research
+  - Conclusions and Recommendations
 
 
 ## Data Dictionary:
