@@ -2,21 +2,25 @@
 
 
 ## Problem Statement
-Since 2012, SAT lost leadership to ACT as the most widely used college admission test in the US.  College Board released the new format in March 2016, and would like to identify priority state(s) to focus the efforts and resources in driving SAT participation rates going forward.  
+Participation rates on the SAT test has been overtaken by ACT since 2012.  College Board released the new format in March 2016, and would like to identify priority state(s) to focus the efforts and resources in driving SAT participation rates going forward.  
 
 
 ## Executive Summary
 
-To address our problem statement, we analyse average SAT and ACT scores by state, as well as the participation rates, for the graduating class of 2017 and 2018.  Topics covered are outlined below:  
+**Objective:** To increase SAT participation rates, by identifying state(s) that College Board can focus its efforts and resources.
 
-  ### Key Contents
-  - 2017 Data Import & Cleaning
-  - 2018 Data Import and Cleaning
-  - Exploratory Data Analysis
-  - Data Visualization
-  - Descriptive and Inferential Statistics
-  - Outside Research
-  - Conclusions and Recommendations
+**Process:** 
+To address our problem statement, the following approach was taken:
+
+- Compiling data from SAT and ACT from 2017 and 2018
+  - Import, Cleaning and Editing
+- Exploratory Data Analysis and Data Visualizations
+  - Translating data into visualizations charts to observe patterns 
+  - Understanding patterns, anomalies on the charts
+- Outside Research to support findings & recommendation
+
+**Outcome:** 
+Provide College Board with recommendations on which state(s) to focus on in order to drive SAT participation rates going forward.
 
 
 ## Data Dictionary
