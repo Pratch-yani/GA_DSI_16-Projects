@@ -2,60 +2,67 @@
 
 
 ## Problem Statement
-Since 2012, SAT lost leadership to ACT as the most widely used college admission test in the US.  College Board released the new format in March 2016, and would like to identify priority state(s) to focus the efforts and resources in driving SAT participation rates going forward.  
+Participation rates on the SAT test has been overtaken by ACT since 2012.  College Board released the new format in March 2016, and would like to identify priority state(s) to focus the efforts and resources in driving SAT participation rates going forward.  
 
 
 ## Executive Summary
 
-To address our problem statement, we analyse average SAT and ACT scores by state, as well as the participation rates, for the graduating class of 2017 and 2018.  Topics covered are outlined below:  
+**Objective:** To increase SAT participation rates, by identifying state(s) that College Board can focus its efforts and resources.
 
-  ### Key Contents
-  - 2017 Data Import & Cleaning
-  - 2018 Data Import and Cleaning
-  - Exploratory Data Analysis
-  - Data Visualization
-  - Descriptive and Inferential Statistics
-  - Outside Research
-  - Conclusions and Recommendations
+**Process:** 
+To address our problem statement, the following approach was taken:
+
+- Compiling data from SAT and ACT from 2017 and 2018
+  - Import, Cleaning and Editing
+- Exploratory Data Analysis and Data Visualizations
+  - Translating data into visualizations charts to observe patterns 
+  - Understanding patterns, anomalies on the charts
+- Outside Research to support findings & recommendation
+
+**Outcome:** 
+Provide College Board with recommendations on which state(s) to focus on in order to drive SAT participation rates going forward.
 
 
-## Data Dictionary:
+## Data Dictionary
 
 |Feature|Type|Dataset|Description|
 |---|---|---|---|
-|**state**|*string*|sat_2017, act_2017, sat_2018, act_2018|US States (50 States + District of Columbia).| 
-|**sat17_participation**|*float*|sat_2017|The percent participation on SAT test for students in the class of 2017.|
-|**sat17_erw**|*integer*|sat_2017|The average Evidence-Based Reading and Writing (ERW) scores of the SAT in 2017.|
-|**sat17_math**|*integer*|sat_2017|The average Math scores of the SAT in 2017.|
-|**sat17_total**|*integer*|sat_2017|The average Total scores of the SAT in 2017.|
-|**act17_participation**|*float*|act_2017|The percent participation on ACT test for students in the class of 2017.|
-|**act17_english**|*float*|act_2017|The average Engligh scores of the ACT in 2017.|
-|**act17_math**|*float*|act_2017|The average Math scores of the ACT in 2017.|
-|**act17_reading**|*float*|act_2017|The average Reading scores of the ACT in 2017.|
-|**act17_science**|*float*|act_2017|The average Science scores of the ACT in 2017.|
-|**act17_composite**|*float*|act_2017|The average Composite scores of the ACT in 2017.|
-|**sat18_participation**|*float*|sat_2018|The percent participation on SAT test for students in the class of 2018.|
-|**sat18_erw**|*integer*|sat_2018|The average Evidence-Based Reading and Writing (ERW) scores of the SAT in 2018.|
-|**sat18_math**|*integer*|sat_2018|The average Math scores of the SAT in 2018.|
-|**sat18_total**|*integer*|sat_2018|The average Total scores of the SAT in 2018.|
-|**act18_participation**|*float*|act_2018|The percent participation on ACT test for students in the class of 2018.|
-|**act18_english**|*float*|act_2018|The average Engligh scores of the ACT in 2018.|
-|**act18_math**|*float*|act_2018|The average Math scores of the ACT in 2018.|
-|**act18_reading**|*float*|act_2018|The average Reading scores of the ACT in 2018.|
-|**act18_science**|*float*|act_2018|The average Science scores of the ACT in 2018.|
-|**act18_composite**|*float*|act_2018|The average Composite scores of the ACT in 2018.|
+|**state**|*string*|SAT/ACT|US States (50 States + District of Columbia).| 
+|**sat17_participation**|*float*|SAT|The percent participation on SAT test (class of 2017).|
+|**sat17_erw**|*integer*|SAT|The average Evidence-Based Reading and Writing (ERW) scores (400-800) for SAT 2017.|
+|**sat17_math**|*integer*|SAT|The average Math scores (400-800) for SAT 2017.|
+|**sat17_total**|*integer*|SAT|The average Total scores (800-1600) for SAT 2017.|
+|**act17_participation**|*float*|ACT|The percent participation on ACT test (class of 2017).|
+|**act17_english**|*float*|ACT|The average Engligh scores (1-36) for ACT 2017.|
+|**act17_math**|*float*|ACT|The average Math scores (1-36) for ACT 2017.|
+|**act17_reading**|*float*|ACT|The average Reading scores (1-36) for ACT 2017.|
+|**act17_science**|*float*|ACT|The average Science scores (1-36) for ACT 2017.|
+|**act17_composite**|*float*|ACT|The average Composite scores (1-36) for ACT 2017.|
+|**sat18_participation**|*float*|SAT|The percent participation on SAT test (class of 2018).|
+|**sat18_erw**|*integer*|SAT|The average Evidence-Based Reading and Writing (ERW) scores (400-800) for SAT 2018.|
+|**sat18_math**|*integer*|SAT|The average Math scores (400-800) for SAT 2018.|
+|**sat18_total**|*integer*|SAT|The average Total scores (800-1600) for SAT 2018.|
+|**act18_participation**|*float*|ACT|The percent participation on ACT test (class of 2018).|
+|**act18_english**|*float*|ACT|The average Engligh scores (1-36) for ACT 2018.|
+|**act18_math**|*float*|ACT|The average Math scores (1-36) for ACT 2018.|
+|**act18_reading**|*float*|ACT|The average Reading scores (1-36) for ACT 2018.|
+|**act18_science**|*float*|ACT|The average Science scores (1-36) for ACT 2018.|
+|**act18_composite**|*float*|ACT|The average Composite scores (1-36) for ACT 2018.|
+
+
 
 
 
 
 ## Conclusions:
 
-From the EDA, Visualizations, and outside research, **there are 3 states of interest** for College Board to increase SAT participations.  These are states that ranked lowest in SAT participation rates, while they are not mandatory states for ACT (100% participation). 
+From the EDA, Visualizations, and outside research, **there are 3 states of interest** for College Board to increase SAT participations.  These are states that ranked lowest in SAT participation rates (red bars on the top), while they are not mandatory states for ACT (blue bars not = 100% participation). 
 
 - Iowa
 - Kansas
 - South Dakota
 
+![Image of State Participations](https://github.com/Pratch-yani/dsiprojects/blob/master/Project1234/project_1/plots/participation_by_state.png)
 
 **Out of the 3 states of interest, IOWA has the highest potential.**
 
