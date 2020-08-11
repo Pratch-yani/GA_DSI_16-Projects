@@ -19,31 +19,33 @@ To address our problem statement, we analyse average SAT and ACT scores by state
   - Conclusions and Recommendations
 
 
-## Data Dictionary:
+## Data Dictionary
 
 |Feature|Type|Dataset|Description|
 |---|---|---|---|
-|**state**|*string*|sat_2017, act_2017, sat_2018, act_2018|US States (50 States + District of Columbia).| 
-|**sat17_participation**|*float*|sat_2017|The percent participation on SAT test for students in the class of 2017.|
-|**sat17_erw**|*integer*|sat_2017|The average Evidence-Based Reading and Writing (ERW) scores of the SAT in 2017.|
-|**sat17_math**|*integer*|sat_2017|The average Math scores of the SAT in 2017.|
-|**sat17_total**|*integer*|sat_2017|The average Total scores of the SAT in 2017.|
-|**act17_participation**|*float*|act_2017|The percent participation on ACT test for students in the class of 2017.|
-|**act17_english**|*float*|act_2017|The average Engligh scores of the ACT in 2017.|
-|**act17_math**|*float*|act_2017|The average Math scores of the ACT in 2017.|
-|**act17_reading**|*float*|act_2017|The average Reading scores of the ACT in 2017.|
-|**act17_science**|*float*|act_2017|The average Science scores of the ACT in 2017.|
-|**act17_composite**|*float*|act_2017|The average Composite scores of the ACT in 2017.|
-|**sat18_participation**|*float*|sat_2018|The percent participation on SAT test for students in the class of 2018.|
-|**sat18_erw**|*integer*|sat_2018|The average Evidence-Based Reading and Writing (ERW) scores of the SAT in 2018.|
-|**sat18_math**|*integer*|sat_2018|The average Math scores of the SAT in 2018.|
-|**sat18_total**|*integer*|sat_2018|The average Total scores of the SAT in 2018.|
-|**act18_participation**|*float*|act_2018|The percent participation on ACT test for students in the class of 2018.|
-|**act18_english**|*float*|act_2018|The average Engligh scores of the ACT in 2018.|
-|**act18_math**|*float*|act_2018|The average Math scores of the ACT in 2018.|
-|**act18_reading**|*float*|act_2018|The average Reading scores of the ACT in 2018.|
-|**act18_science**|*float*|act_2018|The average Science scores of the ACT in 2018.|
-|**act18_composite**|*float*|act_2018|The average Composite scores of the ACT in 2018.|
+|**state**|*string*|SAT/ACT|US States (50 States + District of Columbia).| 
+|**sat17_participation**|*float*|SAT|The percent participation on SAT test (class of 2017).|
+|**sat17_erw**|*integer*|SAT|The average Evidence-Based Reading and Writing (ERW) scores (400-800) for SAT 2017.|
+|**sat17_math**|*integer*|SAT|The average Math scores (400-800) for SAT 2017.|
+|**sat17_total**|*integer*|SAT|The average Total scores (800-1600) for SAT 2017.|
+|**act17_participation**|*float*|ACT|The percent participation on ACT test (class of 2017).|
+|**act17_english**|*float*|ACT|The average Engligh scores (1-36) for ACT 2017.|
+|**act17_math**|*float*|ACT|The average Math scores (1-36) for ACT 2017.|
+|**act17_reading**|*float*|ACT|The average Reading scores (1-36) for ACT 2017.|
+|**act17_science**|*float*|ACT|The average Science scores (1-36) for ACT 2017.|
+|**act17_composite**|*float*|ACT|The average Composite scores (1-36) for ACT 2017.|
+|**sat18_participation**|*float*|SAT|The percent participation on SAT test (class of 2018).|
+|**sat18_erw**|*integer*|SAT|The average Evidence-Based Reading and Writing (ERW) scores (400-800) for SAT 2018.|
+|**sat18_math**|*integer*|SAT|The average Math scores (400-800) for SAT 2018.|
+|**sat18_total**|*integer*|SAT|The average Total scores (800-1600) for SAT 2018.|
+|**act18_participation**|*float*|ACT|The percent participation on ACT test (class of 2018).|
+|**act18_english**|*float*|ACT|The average Engligh scores (1-36) for ACT 2018.|
+|**act18_math**|*float*|ACT|The average Math scores (1-36) for ACT 2018.|
+|**act18_reading**|*float*|ACT|The average Reading scores (1-36) for ACT 2018.|
+|**act18_science**|*float*|ACT|The average Science scores (1-36) for ACT 2018.|
+|**act18_composite**|*float*|ACT|The average Composite scores (1-36) for ACT 2018.|
+
+
 
 
 
