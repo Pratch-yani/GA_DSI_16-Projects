@@ -52,7 +52,7 @@ To address our problem statement, we analyse average SAT and ACT scores by state
 
 ## Conclusions:
 
-From the EDA, Visualizations, and outside research, **there are 3 states of interest** for College Board to increase SAT participations.  These are states that ranked lowest in SAT participation rates, while they are not mandatory states for ACT (100% participation). 
+From the EDA, Visualizations, and outside research, **there are 3 states of interest** for College Board to increase SAT participations.  These are states that ranked lowest in SAT participation rates (red bars on the top), while they are not mandatory states for ACT (blue bars not = 100% participation). 
 
 - Iowa
 - Kansas
