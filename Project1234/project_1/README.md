@@ -58,6 +58,7 @@ From the EDA, Visualizations, and outside research, **there are 3 states of inte
 - Kansas
 - South Dakota
 
+![Image of State Participations](https://github.com/Pratch-yani/dsiprojects/blob/master/Project1234/project_1/plots/participation_by_state.png)
 
 **Out of the 3 states of interest, IOWA has the highest potential.**
 
