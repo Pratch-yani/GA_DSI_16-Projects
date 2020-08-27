@@ -65,4 +65,8 @@ For example:
 
 ## Kaggle Submission:
 
+**Model 4**
+
+The selected model 1 was used to fit the entire train dataset.  This was then used to predict the prices in the test data set and submit Kaggle.
+
 ![title](images/kaggle_submissions.png)
