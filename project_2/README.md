@@ -26,10 +26,6 @@ To address our problem statement, the following approach was taken:
 ![title](images/process.png)
 
 
-**Outcome:**
-
-The final model that predicts the price of a house at sale is Model 4 with 34 features.  
-Detailed can be find in [Part 2: Modelling and Evaluations](part_2-modelling-and-evaluation.ipynb)
 
 ---
 
