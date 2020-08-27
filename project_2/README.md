@@ -34,7 +34,7 @@ To address our problem statement, the following approach was taken:
 Based on the problem statement, we have identified the regression model that can predict `'saleprice'` of a house in Ames Iowa.  The model is based on 34 the following features.
 For example:
  - Neighborhoods **Northridge Heights** and **Stone Brook** have high value to sale price.
- - Quality of the house (Overall, Exterior, Kitchen) drives sale.
+ - Quality of the house (Overall, Exterior, Kitchen) drives higher sale price.
 
 ![title](images/lasso_coefficient.png)
 
