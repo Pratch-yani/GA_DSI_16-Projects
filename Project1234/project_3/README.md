@@ -51,6 +51,8 @@ To address our problem statement, the following approach was taken:
 
 **Random Forest** is the model that gives the best sensitivity score.  Of all the `alexa` selftexts, >80% will be correctly classify as from `r/alexa` subreddit.
 
+<img src= "images/final_scores.png" alt="alexa" align="left">
+
 #### Future Next Steps:
 
 - **Data to improve the model:** more texts from `alexa` is needed to improve the model as we are more interested in getting correct predictions for `alexa` while currently we have slightly less data vs. `googlehome` (48.5% vs. 51.5%).
