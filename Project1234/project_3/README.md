@@ -1,4 +1,5 @@
-<img src= "images/reddit.png" alt="reddit logo" align="left">
+<img src= "images/reddit.png" alt="reddit logo" align="center">
+
 
 # Project 3: Web APIs & Classification (Part 1)
 
@@ -34,28 +35,12 @@ Identify key insights that are generated from user discussion and identify next 
 ---
 
 
-## Executive Summary
-
-**Objective:**
-1. To create a text classification model using Natural Language Processing to correctly classified missing labels.  Focus is on texts for `alexa` as insights for marketing plan, while only enough texts for `googlehome` for comparative analysis.
-2. Gain insights related to the consumer discussions and identify next steps for the marketing analytics team.
-
-
-**Process:**
+## Data Science Process:
 
 To address our problem statement, the following approach was taken:
 
 <img src= "images/process.png" alt="process">
 
-
-**Outcome:**
-
-The classification model has around 80% accuracy in classifying the missing labels.  
-The following key insights & next steps have been identified:
-- The small formats (Amazon Echo Dot and Google Nest Mini) are most talked about and could be use to recruit new users.
-- Music, Light, Time are common functions for both, while Routine is more unique to Alexa.  Futher sentiment analysis on these topics and more topic-modelling could help to identify marketing plan.
-
-Details can be found in [Part 2](part_2-explore_data_and_modelling.ipynb)
 
 ---
 
@@ -89,4 +74,4 @@ Details can be found in [Part 2](part_2-explore_data_and_modelling.ipynb)
    - Team can futher expand beyond Reddit to gain insights from multiple consumer forums.  Although Reddit is a great starting point for this project, it has limitations based on specific user profiles (gearing towards US, male, younger population) and may not fully represent other user profiles.  
 
 <img src= "images/alexa.png" alt="alexa" align="left">
-<img src= "images/google.png" alt="google" align="left">
+
