@@ -20,7 +20,7 @@ This project focuses on building and iteratively refining regression models to p
 - Exceptionally detailed and robust dataset, based on The Ames Housing Dataset with over 70 different features relating to houses.  
 - Exploratory Data Analysis and Feature Engineering is a crucial part of this project.
 - Iteratively refining the model with regularization techniques and tuning hyperparameters to achieve the final model.  
-- This is a Kaggle challenge and the models are submitted on unseen data.  
+- This is a [Kaggle](https://www.kaggle.com/c/dsi-us-6-project-2-regression-challenge) challenge and the models are submitted on unseen data.  
 - Provide business insights to answer the problem statement.
 
 
