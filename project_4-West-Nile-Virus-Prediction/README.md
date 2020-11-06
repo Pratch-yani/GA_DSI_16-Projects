@@ -1,3 +1,5 @@
+![title](image/chicago_west_nile.png)
+
 # DSI Project 4: West Nile Virus Prediction
 
 *by Esther, Pratch, Wayne (DSI-16)*
@@ -31,6 +33,8 @@ To mitigate the risk of future outbreaks, we want to be as accurate as possible 
 ## Executive Summary
 
 Model 5 based on XGBoost Classifier is the best model to address our problem statement as it has the highest scores on both ROC AUC (0.83) and Sensitivity (0.85), generating the predictions that maximizes True Positive and minimizes False Negative (incorrectly predicting absence of virus).
+
+![title](image/model_summary.png)
 
 Based on this model, the most important factors for predicting presence of West Nile Virus are as follows:
 1. **Seasonality** (Month and Year)
@@ -101,6 +105,9 @@ As part of **Data Cleaning**, the following were performed:
 The **Exploratory Data Analysis** are conducted as follows:
 1. Visualize the distributions of each dataset by year.
 2. Analysis and visualizations of the **Target Variable** (Presence of West Nile Virus `'WnvPresent'`) revealed a highly imbalanced data with 94.6% not present (class 0) and 5.4% present (class 1), with high fluctuations by year.  We also explored seasonality in number of mosquitos and presence of Wnv, as well as the location of "hotspot" traps.
+
+![title](image/imbalanced_data.png)
+
 3. Exploratoty of the weather data with distributions of continuous variables, and checking multi-colinearity of related features to select the strongest for modelling.
 
 ## 3. Feature Engineering
@@ -129,13 +136,20 @@ Predictions on the test data resulted in ROC AUC of 0.77363 (Kaggle public score
 
 Model 5 based on XGBoost Classifier is the best model to address our problem statement as it has the highest scores on both ROC AUC (0.83) and Sensitivity (0.85), generating the predictions that maximizes True Positive and minimizes False Negative (incorrectly predicting absence of virus).
 
+![title](image/model_summary.png)
+
 Based on this model, the most important factors for predicting presence of West Nile Virus are as follows:
 1. **Seasonality** (Month and Year)
 2. **Time** (Pressure and Precipitation - with feature engineering to capture mosquito breeding period by rolling average of 7-10 days)
 3. **Mosquito Species** (C_Restuans and C_Territans)
 4. **Hotspots** (Traps: T900, T002, and T115)
 
+![title](image/auc_roc.png)
+
+![title](image/most_important_feature.png)
 
 Our model has ROC AUC (kaggle score) of 0.77 on completely unseen data.
 
 In our cost benefit analysis, the most cost effective scenario is **Targeted Spraying** the top 5 mosquito hotzones for 6 times during peak period (Jul-Aug).
+
+![title](image/cost_benefit_summary.png)
